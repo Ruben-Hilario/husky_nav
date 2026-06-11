@@ -49,7 +49,7 @@ private:
     void saveMap();
 
     bool worldToMap(double wx, double wy, int& mx, int& my) const;
-    void mapToWorld(int mx, int my, double& wx, double& wy) const;
+    void mapToWorld(int mx, int my, double& wx, double& wy) const;  
 
     Particle odom_pose_;          
     Particle current_slam_pose_; 
@@ -60,8 +60,8 @@ private:
     bool map_initialized_ = false;
 
     const double map_resolution_ = 0.01; // cm per pixel
-    const int map_width_ = 1000;          
-    const int map_height_ = 1000;         
+    const int map_width_ = 4000;          
+    const int map_height_ = 4000;         
     const double map_origin_x_ = -5.0;  // Center the (0,0) world point
     const double map_origin_y_ = -5.0;
     const std::string filename_ = "husky_map";

@@ -5,7 +5,8 @@ namespace husky_mapping {
 SLAM::SLAM() : Node("custom_slam_node") {
     auto qos = rclcpp::SensorDataQoS();
     odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
-        "/odom", qos, std::bind(&SLAM::odomCallback, this, std::placeholders::_1));
+        // "/odom", qos, std::bind(&SLAM::odomCallback, this, std::placeholders::_1));
+        "/a200_1075/platform/odom", qos, std::bind(&SLAM::odomCallback, this, std::placeholders::_1));
     
     scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
         "/scan", qos, std::bind(&SLAM::scanCallback, this, std::placeholders::_1));
